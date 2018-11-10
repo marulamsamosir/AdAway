@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:3.2.1'
     }
 }
 
@@ -13,23 +13,18 @@ plugins {
     id 'org.sonarqube' version '2.6.2'
 }
 
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+
 sonarqube {
     properties {
         // Root project information
         property 'sonar.projectKey', 'org.adaway'
         property 'sonar.projectName', 'AdAway'
-        property 'sonar.projectVersion', '4.0.7'
+        property 'sonar.projectVersion', '4.0.11'
     }
 }
-
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.1'
-}
-

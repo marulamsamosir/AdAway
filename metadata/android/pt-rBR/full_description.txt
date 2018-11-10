@@ -1,0 +1,7 @@
+Um bloqueador de anúncios que usa o arquivo hosts
+O arquivo de hospedagem é um arquivo de sistema que contém uma lista de mapeamentos entre nomes de hospedagem e endereços de IP.
+Quando um app solicita um anúncio de um host naquele arquivo, essa solicitação é redirecionada para o IP local 127.0.0.1, que não faz nada.
+You can download predefined hosts files from within the app to incorporate them into the system's hosts file. It is also possible to use your own files and to add certain hosts to white- and black-lists.
+There are options to run a local web server to respond to blocked host names and to direct requests to the IP address of your choosing instead.
+
+Nescessita de Root: Sim. O arquivo hosts é localizado em /system, que é 'somente leitura' por padrão.

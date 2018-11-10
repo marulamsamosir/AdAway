@@ -3,26 +3,18 @@
   <string name="app_name">AdAway</string>
   <!--Buttons-->
   <string name="button_exit">Välju</string>
-  <string name="button_apply">Laadi failid ja alusta blokeerimist</string>
   <string name="button_close">Sulge</string>
   <string name="button_yes">Jah</string>
   <string name="button_no">Ei</string>
-  <string name="button_revert">Keela blokeerimine</string>
   <string name="button_add">Lisa</string>
   <string name="button_cancel">Tühista</string>
-  <string name="button_revert_text">Taastab süsteemi vaikimisi hosts faili.</string>
   <string name="button_save">Salvesta</string>
-  <string name="button_webserver_toggle_checked">Veebiserver töötab</string>
-  <string name="button_webserver_toggle_unchecked">Veebiserver ei tööta</string>
   <string name="button_help">Abi</string>
   <!--Home-->
   <string name="text_update">Kõik hosts failid laetakse määratud allikatest, ühendatakse sinu loenditega ning paigaldatakse süsteemi ühe failina.</string>
   <string name="button_check_update_hosts">Uuenduste kontrollimine</string>
   <!--Checkbox List-->
-  <string name="checkbox_list_empty">Loend tühi</string>
   <string name="checkbox_list_context_delete">Kustuta</string>
-  <string name="checkbox_list_footer">Uute allikate lisamisel tuleb AdAway uuesti rakendada!</string>
-  <string name="checkbox_list_edit_dialog_title">Redigeeri</string>
   <string name="checkbox_list_context_edit">Redigeeri</string>
   <!--Your lists-->
   <string name="list_dialog_hostname">Aadress:</string>
@@ -30,10 +22,9 @@
   <string name="import_dialog">Importimine...</string>
   <string name="export_dialog">Eksportimine...</string>
   <!--Hosts content-->
-  <!--Status Notifications-->
+  <!--Status Notification-->
   <string name="status_checking">Uuenduste kontrollimine...</string>
   <string name="status_reverting">Taastamine...</string>
-  <string name="status_checking_subtitle">Uuenduste kontrollimine</string>
   <string name="status_update_available">Uuendus saadaval</string>
   <string name="status_update_available_subtitle">Uuem hosts fail saadaval</string>
   <string name="status_no_connection">Ühendus puudub</string>
@@ -41,7 +32,6 @@
   <string name="status_enabled">Lubatud</string>
   <string name="status_enabled_subtitle">Uusim hosts fail kasutusel</string>
   <string name="status_disabled">Keelatud</string>
-  <string name="status_disabled_subtitle">Keelatud</string>
   <!--Apply and Revert Dialogs-->
   <string name="apply_symlink_missing_title">Sümlink puudub</string>
   <string name="apply_not_enough_space_title">Pole piisavalt ruumi</string>
@@ -72,27 +62,14 @@
   <string name="menu_import">Impordi kõik loendid</string>
   <string name="menu_export">Expordi kõik loendid</string>
   <!--Help-->
-  <string name="help_tab_about">Programmist</string>
-  <string name="help_tab_donate">Anneta</string>
   <string name="help_tab_s_on_s_off">S-ON/S-OFF</string>
   <string name="help_tab_faq">KKK</string>
   <string name="help_tab_problems">Probleemid</string>
-  <string name="help_tab_changelog">Muutuste logi</string>
-  <string name="help_about_version">Versioon:</string>
-  <string-array name="help_donation_google_catalog_values">
-    <item>1 euro</item>
-    <item>2 eurot</item>
-    <item>3 eurot</item>
-    <item>5 eurot</item>
-    <item>8 eurot</item>
-    <item>13 eurot</item>
-  </string-array>
   <!--Adware-->
   <!--Hosts sources-->
   <string name="hosts_last_modified_local">Kohalik:</string>
   <string name="hosts_last_modified_online">Onlain:</string>
   <string name="hosts_not_available">pole saadaval</string>
-  <string name="hosts_dialog_url">URL:</string>
   <!--Other-->
   <string name="app_subtitle">Reklaamide blokeerija</string>
   <!--Tcpdump-->
@@ -118,14 +95,12 @@
   <string name="pref_update_check_daily_summary">Uuendusi kontrollitakse taustal ja neist teavitatakse igapäevaselt</string>
   <string name="pref_automatic_update_daily">Automaatne uuendus</string>
   <string name="pref_automatic_update_daily_summary">Uuenduste olemasolul tehakse need taustal automaatselt.</string>
-  <string name="pref_update_only_on_wifi">Uuenda ainult WIFI-ga</string>
-  <string name="pref_update_only_on_wifi_summary">Taustauuendused käivitatakse ainult WIFI võrgus olles.</string>
   <string name="pref_debug">Silumine</string>
   <string name="pref_enable_debug">Silumise logimine</string>
   <string name="pref_enable_debug_summary">Logimise jõustumiseks on vajalik AdAway taaskäivitamine.</string>
   <!--Drawer menu items-->
+  <!--Drawer menu labels-->
   <!--Shortcuts-->
   <string name="shortcut_preferences">Eelistused</string>
   <!--Hosts source status-->
-  <string name="hosts_source_update_available">Uuendus saadaval</string>
 </resources>

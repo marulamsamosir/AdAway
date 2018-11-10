@@ -1,0 +1,7 @@
+Blokator oglasa koji koristi datoteku poslužitelja.
+Datoteka poslužitelja je datoteka sustava koja sadrži popis mapiranja između naziva poslužitelja i IP adresa.
+Kada aplikacija zahtjeva oglas s poslužitelja koji je sadržan u datoteci poslužitelja, taj zahtjev je preusmjeren na lokalnu adresu 127.0.0.1, koja ne čini ništa.
+Možete preuzeti preddefinirane datoteke poslužitelja sadržane u aplikaciji kako bi ih umetnuli u datoteku poslužitelja sustava. Moguće je koristiti vlastite datoteke i dodavanje određenih poslužitelja na popis blokiranih/neblokiranih.
+Postoje mogućnosti pokretanja lokalnog web poslužitelja kao odgovor na blokirane nazive poslužitelja i izravan zahtjev na vaše odabrane IP adrese.
+
+Zahtijeva root (korijenski pristup): Da. Datoteka poslužitelja koja se nalazi u /system ima po zadanome samo dozvole čitanja.

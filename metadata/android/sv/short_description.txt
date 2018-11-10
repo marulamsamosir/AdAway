@@ -1,0 +1,1 @@
+AdAway är en annonsblockerare (öppen källkod) för Android som använder värdfilen.

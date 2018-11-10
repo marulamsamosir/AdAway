@@ -3,26 +3,18 @@
   <string name="app_name">AdAway</string>
   <!--Buttons-->
   <string name="button_exit">Çıxış</string>
-  <string name="button_apply">Faylları yüklə və reklam bloklanmasını işə sal</string>
   <string name="button_close">Bağla</string>
   <string name="button_yes">Bəli</string>
   <string name="button_no">Xeyr</string>
-  <string name="button_revert">Reklam bloklanmasını deaktiv et</string>
   <string name="button_add">Əlavə Et</string>
   <string name="button_cancel">Ləğv Et</string>
-  <string name="button_revert_text">Sistemdəki adi host faylları geri yükləyir.</string>
   <string name="button_save">Yadda saxla</string>
-  <string name="button_webserver_toggle_checked">Vebserver işləyir</string>
-  <string name="button_webserver_toggle_unchecked">Vebserver işləmir</string>
   <string name="button_webserver_toggle_text">Bloklanmış host adlarını cavablamaq üçün yerli vebserveri dayandır ya da başlat.</string>
   <string name="button_help">Kömək</string>
   <!--Home-->
   <string name="text_update">Bütün mənbə faylları yüklənmişdir, şəxsi siyahın ilə birləşdirildi və sistemindəki hər bir host faylı kimi yükləndi.</string>
   <!--Checkbox List-->
-  <string name="checkbox_list_empty">Boş siyahı</string>
   <string name="checkbox_list_context_delete">Sil</string>
-  <string name="checkbox_list_footer">Yeni maddələri siyahıya əlavə etdikdən sonra AdAway-i yenidən tətbiq etməlisiniz!</string>
-  <string name="checkbox_list_edit_dialog_title">Redaktə Et</string>
   <string name="checkbox_list_context_title">Girişi Redaktə Et</string>
   <string name="checkbox_list_context_edit">Redaktə Et</string>
   <!--Your lists-->
@@ -32,13 +24,11 @@
   <string name="list_dialog_ip">IP (IPv4 or IPv6):</string>
   <string name="import_dialog">Daxil edilir...</string>
   <string name="export_dialog">Xaric edilir..</string>
-  <string name="export_success">Bütün girişlər yaddaş kartındakı \'adaway-çıxış\' faylına çıxarıldı.</string>
   <!--Hosts content-->
-  <!--Status Notifications-->
+  <!--Status Notification-->
   <string name="status_checking">Güncəlləmə axtarılır...</string>
   <string name="status_reverting">Geri alınır..</string>
   <string name="status_reverting_subtitle">Standart host faylı yaradılır</string>
-  <string name="status_checking_subtitle">Güncəlləmə varmı deyə yoxlanılır</string>
   <string name="status_update_available">Güncəlləmə mövcuddur</string>
   <string name="status_update_available_subtitle">Yeni hosts faylları mövcuddur</string>
   <string name="status_no_connection">İnternet bağlantısı yoxdur</string>
@@ -48,7 +38,6 @@
   <string name="status_enabled">Aktivdir</string>
   <string name="status_enabled_subtitle">Ən yeni hosts faylları aktiv edildi</string>
   <string name="status_disabled">Qeyri-aktivdir</string>
-  <string name="status_disabled_subtitle">Qeyri-aktivdir</string>
   <!--Apply and Revert Dialogs-->
   <string name="apply_symlink_missing_title">Symlink tapılmır</string>
   <string name="apply_not_enough_space_title">Yaddaşda kifayət qədər yer yoxdur</string>
@@ -66,25 +55,19 @@
   <string name="menu_hosts_sources">Hosts resursları</string>
   <string name="menu_help">Yardım</string>
   <!--Help-->
-  <string name="help_tab_about">Haqqında</string>
-  <string name="help_tab_donate">İanə ver</string>
   <string name="help_tab_s_on_s_off">S-ON/S-OFF</string>
   <string name="help_tab_faq">FAQ</string>
   <string name="help_tab_problems">Problemlər</string>
-  <string name="help_tab_changelog">Dəyişikliklər</string>
-  <string name="help_about_version">Versiya:</string>
-  <string name="help_donation_paypal_item">AdAway ianə</string>
   <!--Adware-->
   <!--Hosts sources-->
-  <string name="hosts_dialog_url">URL:</string>
   <!--Other-->
   <!--Tcpdump-->
   <!--Preferences-->
   <string name="pref_header_preferences">Tənzimləmələr</string>
   <string name="pref_never_reboot">Yenidən başlatma dialoqunu gizlət</string>
   <!--Drawer menu items-->
+  <!--Drawer menu labels-->
   <!--Shortcuts-->
   <string name="shortcut_preferences">Tənzimləmələr</string>
   <!--Hosts source status-->
-  <string name="hosts_source_update_available">Güncəlləmə mövcuddur</string>
 </resources>

@@ -4,6 +4,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
@@ -19,7 +20,7 @@ import java.util.List;
  */
 @Dao
 public interface HostsSourceDao {
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(HostsSource source);
 
     @Update
@@ -40,6 +41,9 @@ public interface HostsSourceDao {
     @Query("UPDATE hosts_sources SET last_modified_online = :date WHERE url = :url")
     void updateOnlineModificationDate(String url, Date date);
 
-    @Query("UPDATE hosts_sources SET last_modified_local = last_modified_online")
-    void updateLocalModificationDatesToOnlineDates();
+    @Query("UPDATE hosts_sources SET last_modified_local = :date WHERE enabled = 1")
+    void updateEnabledLocalModificationDates(Date date);
+
+    @Query("UPDATE hosts_sources SET last_modified_local = NULL")
+    void clearLocalModificationDates();
 }

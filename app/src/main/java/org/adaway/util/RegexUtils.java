@@ -23,13 +23,12 @@ package org.adaway.util;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import android.webkit.URLUtil;
-
 public class RegexUtils {
     /*
      * Allow hostnames like: localserver example.com example.host.org
      */
-    private static final String HOSTNAME_REGEX = "[a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-\\_\\.]{0,61}[a-zA-Z0-9]";
+    private static final String HOSTNAME_LEVEL_REGEX = "[a-zA-Z]([a-zA-Z0-9\\-_]{0,61}[a-zA-Z0-9])?";
+    private static final String HOSTNAME_REGEX = HOSTNAME_LEVEL_REGEX +"(\\."+ HOSTNAME_LEVEL_REGEX +"){0,126}";
     private static final Pattern HOSTNAME_PATTERN = Pattern.compile(HOSTNAME_REGEX);
 
     /*
@@ -74,16 +73,6 @@ public class RegexUtils {
             Pattern.compile(HOSTS_PARSER_WHITELIST_IMPORT, Pattern.CASE_INSENSITIVE);
 
     /**
-     * Just a wrapper
-     *
-     * @param input
-     * @return
-     */
-    public static boolean isValidUrl(String input) {
-        return URLUtil.isValidUrl(input);
-    }
-
-    /**
      * I could not find any android class that provides checking of an hostnames, thus I am using
      * regex
      *
@@ -91,6 +80,9 @@ public class RegexUtils {
      * @return return true if input is valid hostname
      */
     public static boolean isValidHostname(String input) {
+        if (input.length() > 253) {
+            return false;
+        }
         Matcher hostnameMatcher = HOSTNAME_PATTERN.matcher(input);
 
         try {

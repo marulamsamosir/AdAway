@@ -3,27 +3,19 @@
   <string name="app_name">AdAway</string>
   <!--Buttons-->
   <string name="button_exit">خروج</string>
-  <string name="button_apply">فایل ها را دریافت نموده و برای مسدود کردن تبلیغات آن را اعمال نمایید</string>
   <string name="button_close">بستن</string>
   <string name="button_yes">بلی</string>
   <string name="button_no">خیر</string>
-  <string name="button_revert">غیر فعال کردن برنامه ضد تبلیغات</string>
   <string name="button_add">اضافه کردن</string>
   <string name="button_cancel">لغو</string>
-  <string name="button_revert_text">بازنشانی فایلهای hosts پیش فرض در دستگاه شما.</string>
   <string name="button_save">ذخیره</string>
-  <string name="button_webserver_toggle_checked">وب سرور در حال اجراست</string>
-  <string name="button_webserver_toggle_unchecked">وب سرور در حال اجرا نیست</string>
   <string name="button_webserver_toggle_text">شروع یا توقف وب سرور در لوکالهاست برای پاسخ گویی به درخواستها به منظور مسدود کردن hostnames ها.</string>
   <string name="button_help">راهنما</string>
   <!--Home-->
   <string name="text_update">تمامی فایلهای hosts جدید از منابع تعریف شده دریافت شدند و با لیستی که از قبل موجود بوده است در یک قالب یک فایل hosts واحد یکی شدند.</string>
   <string name="button_check_update_hosts">به روز رسانی ها رو بررسی کن</string>
   <!--Checkbox List-->
-  <string name="checkbox_list_empty">خالی کردن لیست</string>
   <string name="checkbox_list_context_delete">حذف کردن</string>
-  <string name="checkbox_list_footer">بعد از اضافه نمودن آیتم جدید به لیست باید AdAway را از نو اعمال نمایید!</string>
-  <string name="checkbox_list_edit_dialog_title">ویرایش</string>
   <string name="checkbox_list_context_title">ویرایش ورودی</string>
   <string name="checkbox_list_context_edit">ویرایش</string>
   <!--Your lists-->
@@ -33,13 +25,11 @@
   <string name="list_dialog_ip">IP (IPv4 or IPv6):</string>
   <string name="import_dialog">بارگیری...</string>
   <string name="export_dialog">بارگذاری...</string>
-  <string name="export_success">بارگذاری تمامی ورودی ها در فایلی به نام \'adaway-export\'  در sdcard دستگاه شما.</string>
   <!--Hosts content-->
-  <!--Status Notifications-->
+  <!--Status Notification-->
   <string name="status_checking">چک کردن برای به روز رسانی...</string>
   <string name="status_reverting">برگشتن...</string>
   <string name="status_reverting_subtitle">ایجاد فایل hosts استاندارد</string>
-  <string name="status_checking_subtitle">بررسی موجود بودن به روز رسانی</string>
   <string name="status_update_available">به روز رسانی موجود میباشد</string>
   <string name="status_update_available_subtitle">فایلهای hosts جدیدتری موجود میباشد</string>
   <string name="status_no_connection">اتصال اینترنت برقرار نیست</string>
@@ -49,7 +39,6 @@
   <string name="status_enabled">فعال</string>
   <string name="status_enabled_subtitle">فایل های hosts جدید فعال شد</string>
   <string name="status_disabled">غیر فعال</string>
-  <string name="status_disabled_subtitle">غیر فعال</string>
   <!--Apply and Revert Dialogs-->
   <string name="apply_symlink_missing">پیوند نمادین از هدف شما به /system/etc/hosts وجود ندارد و یا درست نمیباشد! اگر مسیر فایل به درستی تنظیم نشده باشد برنامه AdAway به درستی کار نخواهد کرد.\n\nآیا مایلید که یک پیوند نمادین ایجاد نمایید؟</string>
   <string name="apply_symlink_missing_title">پیوند نمادین موجود نیست</string>
@@ -61,10 +50,7 @@
   <string name="apply_remount_fail_title">بارگیری ناموفق</string>
   <string name="apply_copy_fail">کپی کردن فایل hosts ناموفق!</string>
   <string name="apply_copy_fail_title">کپی ناموفق</string>
-  <string name="apply_success_subtitle">منابع hosts اعمال شده: </string>
   <string name="apply_success_title">اعمال موفقیت آمیز</string>
-  <string name="apply_success_dialog">تغییرات با موفقیت اعمال شد.\nبرای موثر واقع شدن تغییرات ممکن است نیاز به شروع مجدد دستگاه شما باشد.\n\nآیا میخواهید دستگاه خود را شروع مجدد نمایید؟\n(برای جلوگیری از از دست دادن اطلاعات مطمئن شوید که هیچ برنامه ای از sdcard در حال حاضر استفاده نمیکند!)</string>
-  <string name="apply_symlink_successful">پیوند نمادین موفق ایجاد شد.\nممکن است برای اعمال تغییرات نیاز به شروع مجدد دستگاه شما باشد.\n\nآیا مایل به ریبوت کردن دستگاه خود هستید؟\n(برای جلوگیری از از دست دادن اطلاعات مطمئن باشید که هیچ برنامه ای از sdcard در حال حاضر استفاده نمیکند!)</string>
   <string name="apply_symlink_successful_title">ایجاد موفق  پیوند نمادین</string>
   <string name="apply_symlink_fail">پیوند نمادین را اندروید نتوانست ایجاد نماید.\nاین مشکل به دلیل وجود قابلیتی به نام S-ON در گوشی های HTC است!\n\nیک راه حل آن است که دستگاه شما به حالت ریکاوری بوت شود و پیوند نمادین را با دستور \'ln -s /data/data/hosts /system/etc/hosts\' ایجاد نمایید.\n\nاگر باز موفق به ایجاد آن نشدید میتوانید در اینترنت در رابطه با S-OFF جستجو نمایید.</string>
   <string name="apply_symlink_fail_title">ایجاد ناموفق  پیوند نمادین</string>
@@ -81,7 +67,6 @@
   <string name="apply_dialog_apply">اعمال فایل hosts</string>
   <string name="apply_fail">اعمال ناموفق فایل hosts بر روی سیستم!\n\nمسیر فایل hosts را در تنظیمات /data/data/hosts تغییر دهید.</string>
   <string name="apply_fail_title">اعمال ناموفق تغییرات</string>
-  <string name="revert_successful">شما فایل hosts را به حالت پیش فرض برگرداندید.\nممکن است برای اعمال تغییرات نیاز به شروع مجدد دستگاه شما باشد.\n\nآیا مایل به ریبوت کردن دستگاه خود هستید؟\n(برای جلوگیری از از دست دادن اطلاعات مطمئن باشید که هیچ برنامه ای از sdcard در حال حاضر استفاده نمیکند!)</string>
   <string name="revert_successful_title">بازنشانی موفق آمیز</string>
   <string name="revert_problem">بازنشانی نا موفق به دلایل ناشناخته.</string>
   <string name="revert_problem_title">بازنشانی ناموفق</string>
@@ -89,9 +74,7 @@
   <string name="download_fail_title">خطا در دریافت</string>
   <string name="no_private_file">فایل های خصوصی نمیتواند ایجاد گردد.</string>
   <string name="no_private_file_title">ایجاد ناموفق فایل خصوصی</string>
-  <string name="enable_systemless_successful">شما حالت systemless را انتخاب کردید.\nممکن است برای اعمال تغییرات نیاز به شروع مجدد دستگاه شما باشد.\n\nآیا مایل به ریبوت کردن دستگاه خود هستید؟\n(برای جلوگیری از از دست دادن اطلاعات مطمئن باشید که هیچ برنامه ای از sdcard در حال حاضر استفاده نمیکند!)</string>
   <string name="enable_systemless_successful_title">فعال کردن با موفقیت انجام شد</string>
-  <string name="disable_systemless_successful">شما حالت systemless را غیرفعال کردید.\nممکن است برای اعمال تغییرات نیاز به شروع مجدد دستگاه شما باشد.\n\nآیا مایل به ریبوت کردن دستگاه خود هستید؟\n(برای جلوگیری از از دست دادن اطلاعات مطمئن باشید که هیچ برنامه ای از sdcard در حال حاضر استفاده نمیکند!)</string>
   <string name="disable_systemless_successful_title">غیر فعال کردن با موفقیت انجام شد</string>
   <!--Other Dialogs-->
   <string name="no_root_title">نیاز به آندروید روت شده میباشد</string>
@@ -110,28 +93,14 @@
   <string name="menu_import">بارگیری همه لیستها</string>
   <string name="menu_export">بارگذاری همه لیست ها</string>
   <!--Help-->
-  <string name="help_tab_about">درباره ما</string>
-  <string name="help_tab_donate">حمایت مالی</string>
   <string name="help_tab_s_on_s_off">S-روشن/S-خاموش</string>
   <string name="help_tab_faq">پرسش و پاسخ</string>
   <string name="help_tab_problems">مشکلات</string>
-  <string name="help_tab_changelog">تغییرات</string>
-  <string name="help_about_version">نسخه:</string>
-  <string name="help_donation_paypal_item">حمایت مالی از AdAway</string>
-  <string-array name="help_donation_google_catalog_values">
-    <item>1 یورو</item>
-    <item>2 یورو</item>
-    <item>3 یورو</item>
-    <item>5 یورو</item>
-    <item>8 یورو</item>
-    <item>13 یورو</item>
-  </string-array>
   <!--Adware-->
   <!--Hosts sources-->
   <string name="hosts_last_modified_local">لوکال:</string>
   <string name="hosts_last_modified_online">آنلاین:</string>
   <string name="hosts_not_available">موجود نیست:</string>
-  <string name="hosts_dialog_url">تارنما:</string>
   <!--Other-->
   <string name="app_subtitle">مسدودگر تبلیغات</string>
   <string name="no_text_editor_title">هیچ ویرایشگر متنی نصب نیست</string>
@@ -166,14 +135,11 @@
     <item>مسیر سفارشی</item>
   </string-array>
   <string name="pref_update_check_summary">در آغاز شروع AdAway به روز رسانی ها را چک کن</string>
-  <string name="pref_sdcard_problem">در صورتی که AdAway بر روی sdcard نصب شده باشد این امکان به درستی کار نخواهد کرد!</string>
   <string name="pref_background">سرویس پس زمینه</string>
   <string name="pref_update_check_daily">بررسی روزانه برای به روز رسانی</string>
   <string name="pref_update_check_daily_summary">بررسی روزانه بروز رسانی ها در پس زمینه به همراه هشدار</string>
   <string name="pref_automatic_update_daily">به روز رسانی خودکار</string>
   <string name="pref_automatic_update_daily_summary">درصورت موجود بودن به روز رسانی به طور خودکار در پس زمینه انجام شود.</string>
-  <string name="pref_update_only_on_wifi">بروز رسانی فقط توسط وای فای</string>
-  <string name="pref_update_only_on_wifi_summary">فقط وقتی به شبکه وای فای متصل شدید اجازه به روز رسانی را در پس زمینه بده</string>
   <string name="pref_whitelist_rules">لیست سفید مجاز است</string>
   <string name="pref_whitelist_rules_summary">ورودی های لیست سفید از منابع Hosts مجاز میباشند.</string>
   <string name="pref_redirection_rules_summary">تهدید امنیتی! به منابع Hosts برای تغییر مسیر داده ها اجازه دهید.</string>
@@ -185,8 +151,8 @@
   <string name="pref_enable_systemless_summary">جلوگیری AdAway از تغییر پارتیشن سیستمی</string>
   <string name="pref_enable_systemless">فعال کردن حالت systemless</string>
   <!--Drawer menu items-->
+  <!--Drawer menu labels-->
   <!--Shortcuts-->
   <string name="shortcut_preferences">تنظیمات</string>
   <!--Hosts source status-->
-  <string name="hosts_source_update_available">به روز رسانی موجود میباشد</string>
 </resources>

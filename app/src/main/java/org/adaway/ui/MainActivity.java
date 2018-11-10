@@ -21,7 +21,10 @@
 package org.adaway.ui;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -29,14 +32,16 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.adaway.R;
-import org.adaway.helper.ResultHelper;
+import org.adaway.helper.NotificationHelper;
 import org.adaway.helper.ThemeHelper;
 import org.adaway.ui.adware.AdwareFragment;
 import org.adaway.ui.help.HelpActivity;
@@ -64,6 +69,14 @@ public class MainActivity extends AppCompatActivity {
      * The selected menu item key for saved instance {@link Bundle}.
      */
     public static final String SELECTED_MENU_ITEM_KEY = "SELECTED_MENU_ITEM";
+    /**
+     * The project link.
+     */
+    private static final String PROJECT_LINK = "https://github.com/AdAway/AdAway";
+    /**
+     * The support link.
+     */
+    private static final String SUPPORT_LINK = "https://paypal.me/BruceBUJON";
     /*
      * Application navigation related.
      */
@@ -75,6 +88,10 @@ public class MainActivity extends AppCompatActivity {
      * The navigation drawer toggle.
      */
     private ActionBarDrawerToggle mDrawerToggle;
+    /**
+     * The navigation drawer.
+     */
+    private View mDrawer;
     /**
      * The navigation drawer list.
      */
@@ -93,52 +110,21 @@ public class MainActivity extends AppCompatActivity {
     private int mSelectedMenuItem;
 
     /**
-     * Handle result from applying when clicked on notification
-     * http://stackoverflow.com/questions/1198558
-     * /how-to-send-parameters-from-a-notification-click-to-an-activity MainActivity launchMode is
-     * set to SingleTop for this in AndroidManifest
-     */
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        Log.d(Constants.TAG, "onNewIntent");
-
-        // if a notification is clicked after applying was done, the following is processed
-        Bundle extras = intent.getExtras();
-        if (extras == null) {
-            return;
-        }
-        if (extras.containsKey(HomeFragment.EXTRA_APPLYING_RESULT)) {
-            int result = extras.getInt(HomeFragment.EXTRA_APPLYING_RESULT);
-            Log.d(Constants.TAG, "Result from intent extras: " + result);
-
-            // download failed because of url
-            String numberOfSuccessfulDownloads = null;
-            if (extras.containsKey(HomeFragment.EXTRA_NUMBER_OF_SUCCESSFUL_DOWNLOADS)) {
-                numberOfSuccessfulDownloads = extras
-                        .getString(HomeFragment.EXTRA_NUMBER_OF_SUCCESSFUL_DOWNLOADS);
-                Log.d(Constants.TAG, "Applying information from intent extras: "
-                        + numberOfSuccessfulDownloads);
-            }
-
-            ResultHelper.showDialogBasedOnResult(this, result, numberOfSuccessfulDownloads);
-        }
-    }
-
-    /**
      * Instantiate View and initialize fragments for this Activity
      */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ThemeHelper.applyTheme(this);
+        NotificationHelper.clearUpdateHostsNotification(this);
         setContentView(R.layout.base_activity_drawer);
         /*
          * Configure navigation drawer.
          */
+        this.mDrawer = this.findViewById(R.id.left_drawer);
         // Configure drawer items
         String[] drawerItems = getResources().getStringArray(R.array.drawer_items);
-        this.mDrawerList = this.findViewById(R.id.left_drawer);
+        this.mDrawerList = this.findViewById(R.id.left_drawer_list);
         this.mDrawerList.setAdapter(new ArrayAdapter<>(this, R.layout.drawer_list_item, drawerItems));
         // Set drawer item listener
         this.mDrawerList.setOnItemClickListener((parent, view, position, id) -> selectDrawerMenuItem(position));
@@ -175,6 +161,13 @@ public class MainActivity extends AppCompatActivity {
         };
         this.mDrawerLayout.addDrawerListener(this.mDrawerToggle);
         this.updateSelectedMenuItem();
+        // Set version number and click listener
+        TextView versionNumberTextView = this.findViewById(R.id.version_number);
+        versionNumberTextView.setText(this.getApplicationVersion());
+        versionNumberTextView.setOnClickListener(this::showProjectPage);
+        // Set support text view click listener
+        TextView supportTextView = this.findViewById(R.id.support_text);
+        supportTextView.setOnClickListener(this::showSupportPage);
         /*
          * Configure actionbar.
          */
@@ -325,8 +318,8 @@ public class MainActivity extends AppCompatActivity {
                     .addToBackStack(STACK_STATE_NAME)
                     .commit();
         }
-        // Highlight the selected item, update the title, and close the drawer
-        this.mDrawerLayout.closeDrawer(this.mDrawerList);
+        // Close the drawer
+        this.mDrawerLayout.closeDrawer(this.mDrawer);
     }
 
     /**
@@ -346,5 +339,56 @@ public class MainActivity extends AppCompatActivity {
         }
         // Update title with item name
         this.setTitle(itemName);
+    }
+
+    /**
+     * Get application version.
+     *
+     * @return The application version number.
+     */
+    private String getApplicationVersion() {
+        try {
+            PackageManager manager = this.getPackageManager();
+            PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
+            return info.versionName;
+        } catch (PackageManager.NameNotFoundException exception) {
+            Log.w(Constants.TAG, "Unable to get application version: " + exception.getMessage());
+            return "";
+        }
+    }
+
+    /**
+     * Show development page.
+     *
+     * @param view The source event view.
+     */
+    private void showProjectPage(@SuppressWarnings("unused") View view) {
+        // Close the drawer
+        this.mDrawerLayout.closeDrawer(this.mDrawer);
+        // Show development page
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(PROJECT_LINK));
+        this.startActivity(browserIntent);
+    }
+
+    /**
+     * Show support page.
+     *
+     * @param view The source event view.
+     */
+    private void showSupportPage(@SuppressWarnings("unused") View view) {
+        // Close the drawer
+        this.mDrawerLayout.closeDrawer(this.mDrawer);
+        // Show support dialog
+        new AlertDialog.Builder(this)
+                .setIcon(R.drawable.baseline_favorite_24)
+                .setTitle(R.string.drawer_support_dialog_title)
+                .setMessage(R.string.drawer_support_dialog_text)
+                .setPositiveButton(R.string.drawer_support_dialog_button, (d, which) -> {
+                    // Show support page
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(SUPPORT_LINK));
+                    this.startActivity(browserIntent);
+                })
+                .create()
+                .show();
     }
 }
